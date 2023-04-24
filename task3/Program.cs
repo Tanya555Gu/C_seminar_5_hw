@@ -34,7 +34,7 @@ void PrintArray(double[] array)
     Console.WriteLine();
 }
 
-string Diff(double[] array)
+double Diff(double[] array)
 {
     double min = array[0];
     double max = array[0];
@@ -44,7 +44,7 @@ string Diff(double[] array)
         if (array[i] > max) max = array[i];
     }
     double dif = max - min;
-    return $"Разница между минимальным ({min:f2}) и максимальным ({max:f2}) элементами массива равна {dif:f2}";
+    return dif;
 }
 
 int len = ReadInt("Введите длину массива");
@@ -52,4 +52,4 @@ double minRnd = ReadInt1("Введите границу минимума слу�
 double maxRnd = ReadInt1("Введите границу максимума случайной величины");
 double[] array = CreateArray(len, minRnd, maxRnd);
 PrintArray(array);
-Console.WriteLine(Diff(array));
+Console.WriteLine($"Разница между минимальным и максимальным элементами массива равна {Diff(array):f2}");
